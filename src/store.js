@@ -3,12 +3,13 @@ import { routerMiddleware } from 'react-router-redux'
 import thunk from 'redux-thunk'
 import createHistory from 'history/createBrowserHistory'
 import rootReducer from './reducers'
-import { composeWithDevTools } from 'redux-devtools-extension'
 
-export const history = createHistory()
+export const history = createHistory();
 
-const initialState = {}
-const enhancers = []
+const initialState = {likes: {jeden: 12, dwa: 9}};
+
+const enhancers = [];
+
 const middleware = [
   thunk,
   routerMiddleware(history)

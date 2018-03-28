@@ -1,12 +1,12 @@
 
 // przykładowy action creator
 
-import { INCREMENT_LIKES } from '../reducers/posts';
+import { INCREMENT_LIKES } from '../reducers/likesReducer';
 
-export function increment(index, info) {
+export function increment(ktory, info) {
   return {
     type: INCREMENT_LIKES,
-    index,
+    ktory,
     info,
     dodatkowe: 'jakies inne dane',
   };

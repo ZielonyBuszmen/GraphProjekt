@@ -1,21 +1,41 @@
 import React from 'react'
-import { push } from 'react-router-redux'
-import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
+import { increment } from '../actions/actionCreators';
 
-const Home = props => (
+const Home = (props) => (
   <div>
     <h1>Home</h1>
     <p>Welcome home!</p>
-    <button onClick={() => props.changePage()}>Go to about page via redux</button>
-  </div>
-)
+    <br/>
+    Pierwszy licznik <b>{props.likes.jeden}</b>
+    <button onClick={props.zwiekszLicznikJeden}>Wiecyj</button>
+    <br/>
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  changePage: () => push('/about-us')
-}, dispatch)
+    Drugi licznik <b>{props.likes.dwa}</b>
+    <button onClick={props.zwiekszLicznikDwa}>Wiecyj</button>
+  </div>
+);
+
+
+const mapStateToProps = (state) => {
+  console.log(state);
+  return {
+    likes: state.likes,
+  };
+};
+
+// const mapDispatchToProps = (dispatch) => bindActionCreators({
+//   changePage: () => push('/about-us')
+// }, dispatch);
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    zwiekszLicznikJeden: () => dispatch(increment('jeden', 'ble')),
+    zwiekszLicznikDwa: () => dispatch(increment('dwa', 'ble')),
+  }
+};
 
 export default connect(
-  null,
-  mapDispatchToProps
-)(Home)
+  mapStateToProps,
+  mapDispatchToProps,
+)(Home);

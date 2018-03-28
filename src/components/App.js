@@ -1,18 +1,15 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom'
-import Home from './Home'
-import About from './About'
+import { Route, Link } from 'react-router-dom';
+import Home from './Home';
 
 const App = () => (
   <div>
     <header>
-      <Link to="/">Home</Link>
-      <Link to="/about-us">About</Link>
+      Nagłówek
     </header>
 
     <main>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/about-us" component={About} />
+      <Home/>
     </main>
   </div>
 );

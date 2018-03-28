@@ -1,11 +1,11 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
 
-// jak dodać reducer "posts"? Otóż:
-// import posts from './posts';
+import likesReducer from './likesReducer';
+
 const rootReducer = combineReducers({
   routing: routerReducer,
-  // posts
+  likes: likesReducer,
 });
 
 export default rootReducer;

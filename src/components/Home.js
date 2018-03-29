@@ -2,19 +2,22 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { increment } from '../actions/actionCreators';
 
-const Home = (props) => (
-  <div>
-    <h1>Home</h1>
-    <p>Welcome home!</p>
-    <br/>
-    Pierwszy licznik <b>{props.likes.jeden}</b>
-    <button onClick={props.zwiekszLicznikJeden}>Wiecyj</button>
-    <br/>
+class Home extends React.Component {
+  render() {
+    return <div>
+      <h1>Home</h1>
+      <p>Welcome home!</p>
+      <br/>
+      Pierwszy licznik <b>{this.props.likes.jeden}</b>
+      <button onClick={this.props.zwiekszLicznikJeden}>Wiecyj</button>
+      <br/>
 
-    Drugi licznik <b>{props.likes.dwa}</b>
-    <button onClick={props.zwiekszLicznikDwa}>Wiecyj</button>
-  </div>
-);
+      Drugi licznik <b>{this.props.likes.dwa}</b>
+      <button onClick={this.props.zwiekszLicznikDwa}>Wiecyj</button>
+    </div>;
+  }
+
+};
 
 
 const mapStateToProps = (state) => {

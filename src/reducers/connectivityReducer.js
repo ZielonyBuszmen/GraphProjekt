@@ -5,6 +5,7 @@
  * Zmienia w modelu flagę `isGraphConnected`, gdzie `true` oznacza graf silnie spójny, `false` mówi o braku takiej spójności,
  * a `null` oznacza stan początkowy flagi
  */
+import {createEmptyArray, Stack} from '../helpers';
 
 export const CHECK_GRAPH_CONNECTIVITY = 'connectivity/CHECK_GRAPH_CONNECTIVITY';
 export const RESET_STATUS = 'RESET_STATUS';
@@ -61,5 +62,36 @@ export default function connectivity(state = [], action) {
  * @return bool
  */
 function checkConnectivityOfGraph(graph) {
+  // lista odwiedzonych wierzcholkow
+  const visited = createEmptyArray(graph.length, false);
 
+  // pusty stos wierzhcołków
+  const stack = new Stack();
+
+  // licznik odwiedzonych wierzcholkow
+  let licznikOdwiedzonych = 0;
+
+  // pushujemy pierwszy wierzcholek
+  stack.push(0);
+  visited[0] = true;
+
+  while (!stack.empty()) {
+    let v = stack.pop();
+    licznikOdwiedzonych++;
+
+    // dla kazdego sasiada wierzcholka wykonujemy
+   let temp = graph[v]
+      .filter((element) => { // najpierw odfiltrowac juz odwiedzone wiercholki
+        return visited[element] === false;
+      })
+      .map((element) => { // a nastepnie te wierzcholki odwiedzic i wpisac na stos
+        visited[element] = true;
+        stack.push(element);
+        return element;
+      });
+   debugger;
+   let sss = 123;
+  }
+
+  return licznikOdwiedzonych === graph.length;
 }

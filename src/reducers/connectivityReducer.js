@@ -5,6 +5,7 @@
  * Zmienia w modelu flagę `isGraphConnected`, gdzie `true` oznacza graf silnie spójny, `false` mówi o braku takiej spójności,
  * a `null` oznacza stan początkowy flagi
  */
+import {createEmptyArray, Stack} from '../helpers';
 
 export const CHECK_GRAPH_CONNECTIVITY = 'connectivity/CHECK_GRAPH_CONNECTIVITY';
 export const RESET_STATUS = 'RESET_STATUS';
@@ -58,8 +59,30 @@ export default function connectivity(state = [], action) {
  * Zwraca `true`, jeśli graf jest silnie spójny, bądź false w przeciwnym wypadku
  *
  * @param graph - graf w formie macierzy sąsiedztwa
- * @return bool
+ * @return boolean
  */
 function checkConnectivityOfGraph(graph) {
+  const visited = createEmptyArray(graph.length, false);
+  const stack = new Stack();
+  let visitedCounter = 0;
 
+  stack.push(0);
+  visited[0] = true;
+
+  while (!stack.empty()) {
+    const v = stack.pop();
+    visitedCounter++;
+
+    for (const neighbour in graph[v]) {
+      if (graph[v][neighbour] === 0) {
+        continue;
+      }
+      if (visited[neighbour]) {
+        continue;
+      }
+      stack.push(neighbour);
+      visited[neighbour] = true;
+    }
+  }
+  return visitedCounter === graph.length;
 }

@@ -80,17 +80,16 @@ function checkConnectivityOfGraph(graph) {
     licznikOdwiedzonych++;
 
     // dla kazdego sasiada wierzcholka wykonujemy
-   let temp = graph[v]
-      .filter((element) => { // najpierw odfiltrowac juz odwiedzone wiercholki
-        return visited[element] === false;
-      })
-      .map((element) => { // a nastepnie te wierzcholki odwiedzic i wpisac na stos
-        visited[element] = true;
-        stack.push(element);
-        return element;
-      });
-   debugger;
-   let sss = 123;
+
+   for(let i = 0; i < graph[v].length; i++) {
+      if(graph[v][i]) {
+        if(visited[i]) {
+          continue;
+        }
+        stack.push(i);
+        visited[i] = true;
+      }
+   }
   }
 
   return licznikOdwiedzonych === graph.length;

@@ -59,38 +59,30 @@ export default function connectivity(state = [], action) {
  * Zwraca `true`, jeśli graf jest silnie spójny, bądź false w przeciwnym wypadku
  *
  * @param graph - graf w formie macierzy sąsiedztwa
- * @return bool
+ * @return boolean
  */
 function checkConnectivityOfGraph(graph) {
-  // lista odwiedzonych wierzcholkow
   const visited = createEmptyArray(graph.length, false);
-
-  // pusty stos wierzhcołków
   const stack = new Stack();
+  let visitedCounter = 0;
 
-  // licznik odwiedzonych wierzcholkow
-  let licznikOdwiedzonych = 0;
-
-  // pushujemy pierwszy wierzcholek
   stack.push(0);
   visited[0] = true;
 
   while (!stack.empty()) {
-    let v = stack.pop();
-    licznikOdwiedzonych++;
+    const v = stack.pop();
+    visitedCounter++;
 
-    // dla kazdego sasiada wierzcholka wykonujemy
-
-   for(let i = 0; i < graph[v].length; i++) {
-      if(graph[v][i]) {
-        if(visited[i]) {
-          continue;
-        }
-        stack.push(i);
-        visited[i] = true;
+    for (neighbour in graph[v]) {
+      if (graph[v][neighbour] === 0) {
+        continue;
       }
-   }
+      if (visited[neighbour]) {
+        continue;
+      }
+      stack.push(neighbour);
+      visited[neighbour] = true;
+    }
   }
-
-  return licznikOdwiedzonych === graph.length;
+  return visitedCounter === graph.length;
 }

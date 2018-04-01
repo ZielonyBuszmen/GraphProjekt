@@ -73,7 +73,7 @@ function checkConnectivityOfGraph(graph) {
     const v = stack.pop();
     visitedCounter++;
 
-    for (neighbour in graph[v]) {
+    for (const neighbour in graph[v]) {
       if (graph[v][neighbour] === 0) {
         continue;
       }

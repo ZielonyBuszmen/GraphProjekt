@@ -1,12 +1,15 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { increment } from '../actions/actionCreators';
+import MacierzSasiedztwa from './MacierzSasiedztwa';
 
 class Home extends React.Component {
   render() {
     return <div>
       <h1>Home</h1>
       <p>Welcome home!</p>
+      <br/>
+      <MacierzSasiedztwa size={4} />
       <br/>
       Pierwszy licznik <b>{this.props.likes.jeden}</b>
       <button onClick={this.props.zwiekszLicznikJeden}>Wiecyj</button>
@@ -21,9 +24,9 @@ class Home extends React.Component {
 
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return {
     likes: state.likes,
+    matrix: state.matrix,
   };
 };
 

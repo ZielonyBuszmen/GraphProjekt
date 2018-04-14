@@ -11,6 +11,7 @@ const initialState = {
   connectivity: {
     isGraphConnected: null, // domyślny stan flagi, przed sprawdzeniem grafu
   },
+  matrix: [] // graf w formie macierzy sąsiedztwa
 };
 
 const enhancers = [];

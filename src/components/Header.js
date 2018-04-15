@@ -19,7 +19,7 @@ class Header extends React.Component {
   render() {
     return(
       <div>
-        <Navbar light expand="md" style={{'background-color': '#e3f2fd'}}>
+        <Navbar light expand="md" style={{'backgroundColor': '#e3f2fd'}}>
           <Container>
           <NavbarBrand href="/">Nazwa serwisu</NavbarBrand>
           <NavbarToggler />

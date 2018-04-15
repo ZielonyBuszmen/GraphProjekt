@@ -2,7 +2,7 @@
 
 import {INCREMENT_LIKES} from '../reducers/likesReducer';
 import {CHECK_GRAPH_CONNECTIVITY} from '../reducers/connectivityReducer';
-import { MACIERZ_SASIEDZTWA_CHANGED } from '../reducers/matrixReducer';
+import { LISTY_SASIEDZTWA_CHANGED, MACIERZ_SASIEDZTWA_CHANGED } from '../reducers/matrixReducer';
 
 export function increment(ktory, info) {
   return {
@@ -32,5 +32,16 @@ export function macierzSasiedztwaChanged(graph) {
   return {
     type: MACIERZ_SASIEDZTWA_CHANGED,
     graph
+  }
+}
+
+/**
+ * @param lists - array[][], graf w formie listy sąsiedztwa
+ * @return {{type, graph: *}}
+ */
+export function listySasiedztwaChanged(lists) {
+  return {
+    type: LISTY_SASIEDZTWA_CHANGED,
+    lists
   }
 }

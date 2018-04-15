@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { increment } from '../actions/actionCreators';
 import MacierzSasiedztwa from './MacierzSasiedztwa';
+import ListySasiedztwa from './ListySasiedztwa';
 
 class Home extends React.Component {
   render() {
@@ -19,6 +20,8 @@ class Home extends React.Component {
       <button onClick={this.props.zwiekszLicznikDwa}>Wiecyj</button>
       <hr/>
       {this.props.matrix}
+      <hr/>
+      <ListySasiedztwa />
     </div>;
   }
 

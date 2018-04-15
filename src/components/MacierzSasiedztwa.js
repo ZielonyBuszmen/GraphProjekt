@@ -7,7 +7,7 @@ class MacierzSasiedztwa extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {matrix: createEmptyMatrix(props.size, '')};
+    this.state = {matrix: createEmptyMatrix(props.size, 0)};
   }
 
   prepareInputsArray = (size) => {

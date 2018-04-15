@@ -17,6 +17,8 @@ class Home extends React.Component {
 
       Drugi licznik <b>{this.props.likes.dwa}</b>
       <button onClick={this.props.zwiekszLicznikDwa}>Wiecyj</button>
+      <hr/>
+      {this.props.matrix}
     </div>;
   }
 

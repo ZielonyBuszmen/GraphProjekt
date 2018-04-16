@@ -1,13 +1,12 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { createEmptyMatrix } from '../helpers';
-import { macierzSasiedztwaChanged } from '../actions/actionCreators';
+import { createEmptyMatrix, macierzSasiedztwaChanged } from '../actions/actionCreators';
 
 class MacierzSasiedztwa extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {matrix: createEmptyMatrix(props.size, 0)};
+    props.createEmptyMatrix(props.size);
   }
 
   prepareInputsArray = (size) => {
@@ -15,7 +14,7 @@ class MacierzSasiedztwa extends React.Component {
     let key = 0;
     for (let i = 0; i < size; i++) {
       for (let j = 0; j < size; j++) {
-        array.push(this.inputRenderer(key, i, j));
+        array.push(this.inputRenderer(key, j, i));
         key++;
       }
       array.push(<br key={size * size + i}/>); // duży key, bo się pluło
@@ -23,20 +22,17 @@ class MacierzSasiedztwa extends React.Component {
     return array;
   };
 
-  inputRenderer = (key, col, row) => {
+  inputRenderer = (key, row, col) => {
+    if (this.props.matrix.length === 0) return '';
     return (
-      <input type="text" key={key} value={this.state.matrix[col][row]}
+      <input type="text" key={key} value={this.props.matrix[col][row]}
              onChange={(e) => this.handleChange(e, col, row)}/>
     );
   };
 
-  handleChange = (event, col, row) => {
-    const matrix = this.state.matrix;
-    matrix[col][row] = event.target.value;
-    this.setState({
-      matrix: matrix
-    });
-    this.props.macierzSasiedztwaChanged(matrix);
+  handleChange = (event, row, col) => {
+    const value = event.target.value;
+    this.props.macierzSasiedztwaChanged(row, col, value);
   };
 
   render() {
@@ -57,7 +53,8 @@ const mapStateToProps = (state) => {
 };
 const mapDispatchToProps = (dispatch) => {
   return {
-    macierzSasiedztwaChanged: (matrix) => dispatch(macierzSasiedztwaChanged(matrix)),
+    macierzSasiedztwaChanged: (row, col, value) => dispatch(macierzSasiedztwaChanged(row, col, value)),
+    createEmptyMatrix: (size) => dispatch(createEmptyMatrix(size)),
   }
 };
 

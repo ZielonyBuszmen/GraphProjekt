@@ -2,7 +2,7 @@
 
 import {INCREMENT_LIKES} from '../reducers/likesReducer';
 import {CHECK_GRAPH_CONNECTIVITY} from '../reducers/connectivityReducer';
-import { LISTY_SASIEDZTWA_CHANGED, MACIERZ_SASIEDZTWA_CHANGED } from '../reducers/matrixReducer';
+import { CREATE_EMPTY_MATRIX, LISTY_SASIEDZTWA_CHANGED, MACIERZ_SASIEDZTWA_CHANGED } from '../reducers/matrixReducer';
 
 export function increment(ktory, info) {
   return {
@@ -25,13 +25,28 @@ export function ckeckGraphConnectivity(graph) {
 }
 
 /**
- * @param graph - array[][], graf w formie macierzy sąsiedztwa
- * @return {{type, graph: *}}
+ * @param col - kolumna
+ * @param row - wiersz
+ * @param value - wartość
+ * @returns {{type: string, col: *, row: *, value: *}}
  */
-export function macierzSasiedztwaChanged(graph) {
+export function macierzSasiedztwaChanged(row, col, value) {
   return {
     type: MACIERZ_SASIEDZTWA_CHANGED,
-    graph
+    row,
+    col,
+    value,
+  }
+}
+
+/**
+ * @param size
+ * @returns {{type: string, size: *}}
+ */
+export function createEmptyMatrix(size) {
+  return {
+    type: CREATE_EMPTY_MATRIX,
+    size
   }
 }
 

@@ -29,6 +29,10 @@ export function copyMatrix(matrix) {
   return matrix.map(current => current.map(value => value));
 }
 
+export function immutablePush(arr, newEntry) {
+  return [...arr, newEntry]
+}
+
 /**
  * Funkcja pomocnicza, tworzy pustą tablicę i wypełnia ją wartościami
  * @param length - długość tablicy

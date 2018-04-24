@@ -1,7 +1,7 @@
 import React from 'react';
 import { listySasiedztwaChanged, macierzSasiedztwaChanged } from '../actions/actionCreators';
 import { connect } from 'react-redux';
-import { macierzNaListe } from '../helpers';
+import { immutablePush, macierzNaListe } from '../helpers';
 
 
 /*
@@ -12,12 +12,30 @@ Małe info:
  */
 class ListySasiedztwa extends React.Component {
 
+
+  inputRenderer = (list, node) => {
+    let max = list.length < this.props.matrix.length ? list.length + 1 : list.length;
+    let result = [];
+    for (let i = 0; i < max; i++) {
+      const value = list[i];
+      result = immutablePush(result, <input type="text" value={value} style={{width: '35px'}} onChange={(e) => this.handleChange(e, node, i)}/>)
+    }
+    return result;
+  };
+
+  handleChange = (event, node, listElement) => {
+    const value = parseInt(event.target.value);
+    const lists = macierzNaListe(this.props.matrix);
+    lists[node][listElement] = value;
+    this.props.listySasiedztwaChanged(lists);
+  };
+
   listRenderer() {
     const {matrix} = this.props;
     const lists = macierzNaListe(matrix);
     let result = [];
-    lists.map((connectedLists, node) => {
-      result[node] = <span>{node} - {connectedLists.join(',')}<br/></span>;
+    lists.map((connectedList, node) => {
+      result[node] = <span>{node} - {this.inputRenderer(connectedList, node)}<br/></span>;
     });
     return result;
   }

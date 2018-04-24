@@ -11,18 +11,28 @@ Małe info:
  - trzeba wymyśleć, jak to zrobić, by to ładnie wyświetlać
  */
 class ListySasiedztwa extends React.Component {
+
+  listRenderer() {
+    const {matrix} = this.props;
+    const lists = macierzNaListe(matrix);
+    let result = [];
+    lists.map((connectedLists, node) => {
+      result[node] = <span>{node} - {connectedLists.join(',')}<br/></span>;
+    });
+    return result;
+  }
+
   render() {
     return (
       <div>
         <hr/>
         Tutaj komponent z inputami z listą sąsiedztwa<br/>
-        {macierzNaListe(this.props.matrix || [])}
+        {this.listRenderer()}
         <hr/>
       </div>
     );
   }
 }
-
 
 
 const mapStateToProps = (state) => {

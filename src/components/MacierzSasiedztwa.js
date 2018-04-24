@@ -24,14 +24,15 @@ class MacierzSasiedztwa extends React.Component {
 
   inputRenderer = (key, row, col) => {
     if (this.props.matrix.length === 0) return '';
+    const value = this.props.matrix[col][row] || '';
     return (
-      <input type="text" key={key} value={this.props.matrix[col][row]}
+      <input type="text" key={key} value={value} placeholder={0}
              onChange={(e) => this.handleChange(e, col, row)}/>
     );
   };
 
   handleChange = (event, row, col) => {
-    const value = event.target.value;
+    const value = parseInt(event.target.value) || 0;
     this.props.macierzSasiedztwaChanged(row, col, value);
   };
 

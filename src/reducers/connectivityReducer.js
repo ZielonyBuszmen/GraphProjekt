@@ -42,7 +42,7 @@ export default function connectivity(state = [], action) {
   switch (action.type) {
     case CHECK_GRAPH_CONNECTIVITY:
       const newState = {...state};
-      newState.isGraphConnected = checkConnectivityOfGraph(action.graph);
+      newState.isGraphConnected = checkStrongConnectivityOfGraph(action.graph);
       return newState;
 
     case RESET_STATUS:
@@ -55,19 +55,38 @@ export default function connectivity(state = [], action) {
 }
 
 /**
+ * Sprawdza silną spójność grafu.
  * Funkcja przyjmuje graf w formie macierzy sąsiedztwa.
- * Zwraca `true`, jeśli graf jest silnie spójny, bądź false w przeciwnym wypadku
+ *
+ * @param graph
+ * @returns {boolean} - true, jeśli graf jest silnie spójny
+ */
+function checkStrongConnectivityOfGraph(graph) {
+  for (const node in graph) {
+    const result = checkConnectivityOfGraph(graph, node);
+    if (result === false) {
+      return false;
+    }
+  }
+  return true;
+}
+
+/**
+ * Sprawdza spójność grafu
+ * Funkcja przyjmuje graf w formie macierzy sąsiedztwa.
+ * Zwraca `true`, jeśli graf jest spójny, bądź false w przeciwnym wypadku
  *
  * @param graph - graf w formie macierzy sąsiedztwa
+ * @param startedNode - wierchołek, z którego startujemy, domyślnie pierwszy (czyli 0)
  * @return boolean
  */
-function checkConnectivityOfGraph(graph) {
+function checkConnectivityOfGraph(graph, startedNode = 0) {
   const visited = createEmptyArray(graph.length, false);
   const stack = new Stack();
   let visitedCounter = 0;
 
-  stack.push(0);
-  visited[0] = true;
+  stack.push(startedNode);
+  visited[startedNode] = true;
 
   while (!stack.empty()) {
     const v = stack.pop();

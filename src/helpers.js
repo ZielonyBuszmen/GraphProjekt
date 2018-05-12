@@ -20,11 +20,23 @@ export function createEmptyMatrix(nodes, defaultValue = null) {
   return matrix;
 }
 
+/**
+ * Wykonuje 'deep copy' tablicy dwu wymiarowej (macierzy)
+ * @param matrix - array[][]
+ * @returns {array[][]}
+ */
+export function copyMatrix(matrix) {
+  return matrix.map(current => current.map(value => value));
+}
+
+export function immutablePush(arr, newEntry) {
+  return [...arr, newEntry]
+}
 
 /**
  * Funkcja pomocnicza, tworzy pustą tablicę i wypełnia ją wartościami
  * @param length - długość tablicy
- * @param defaultValue - wartość domyślna, którą ma być wypełniona tablica
+ * @param defaultValue - wartość domyślna, którą ma być wypełniona tablica. Tylko typ prosty. NIE MOŻE TO BYC OBIEKT ANI TABLICA! (powstaje błąd referencji)
  * @return {Array}
  */
 export function createEmptyArray(length, defaultValue = null) {
@@ -35,6 +47,37 @@ export function createEmptyArray(length, defaultValue = null) {
   return matrix;
 }
 
+/**
+ * Zamienia macierz sąsiedztwa na listy sąsiedztwa
+ * @param matrix - macierz sąsiedztwa
+ * @return {Array[][]} - graf w formie list sąsiedztwa
+ */
+export function macierzNaListe(matrix) {
+  const result = createEmptyArray(matrix.length);
+  matrix.map((row, i) => {
+    result[i] = [];
+    row.map((value, j) => {
+      if (value !== 0) {
+        result[i].push(j);
+      }
+    })
+  });
+  return result;
+}
+
+/**
+ * Zamienia listy sąsiedztwa na macierze sąsiedztwa
+ * @param lists - listy sąsiedztwa
+ * @return {Array[][]} - graf w formie macieerzy sąsiedztwa
+ */
+export function listaNaMacierz(lists) {
+  let result = createEmptyMatrix(lists.length, 0);
+  lists.map((row, index) =>
+    row.map(value => {
+      result[index][value] = 1;
+    }));
+  return result;
+}
 
 /**
  * Implementacja stosu

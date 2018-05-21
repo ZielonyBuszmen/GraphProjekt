@@ -15,7 +15,7 @@ class ListySasiedztwa extends React.Component {
     const lists = macierzNaListe(matrix);
     let result = [];
     lists.map((connectedList, node) => {
-      result[node] = <span>{node} - {this.inputRowRenderer(connectedList, node)}<br/></span>;
+      result[node] = <span key={node}>{node} - {this.inputRowRenderer(connectedList, node)}<br/></span>;
     });
     return result;
   }
@@ -31,7 +31,7 @@ class ListySasiedztwa extends React.Component {
     let max = list.length < this.props.matrix.length ? list.length + 1 : list.length;
     let result = [];
     for (let i = 0; i < max; i++) {
-      const value = list[i];
+      const value = list[i] != null ? list[i] : '';
       result = immutablePush(result, <input type="text" value={value} style={{width: '35px'}} onChange={(e) => this.handleChange(e, startNode, i)}/>)
     }
     return result;

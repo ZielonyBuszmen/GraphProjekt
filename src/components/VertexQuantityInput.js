@@ -14,7 +14,9 @@ class VertexQuantityInput extends React.Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.graphSizeChanged(this.state.qty);
+    let qty = parseInt(this.state.qty) || 0;
+    qty = (qty > 20 || qty < 0) ? 0 : qty;
+    this.props.graphSizeChanged(qty);
   };
 
   changeQty = (event) => {

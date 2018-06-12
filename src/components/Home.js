@@ -17,6 +17,7 @@ class Home extends React.Component {
       <h1>Home</h1>
       <p>Welcome home!</p>
       <br/>
+      <a href='' className='btn btn-danger'>Od nowa!</a>
       <Row>
         <Col>
           <BlockMask/>

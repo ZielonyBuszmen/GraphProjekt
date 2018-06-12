@@ -1,4 +1,5 @@
-import { copyMatrix, createEmptyMatrix, listaNaMacierz } from '../helpers';
+import { changeGraphSize, copyMatrix, createEmptyMatrix, listaNaMacierz } from '../helpers';
+import { CHANGE_GRAPH_SIZE } from './graphSizeRecuder';
 
 export const MACIERZ_SASIEDZTWA_CHANGED = 'matrix/MACIERZ_SASIEDZTWA_CHANGED';
 export const LISTY_SASIEDZTWA_CHANGED = 'matrix/LISTY_SASIEDZTWA_CHANGED';
@@ -14,6 +15,8 @@ function matrixReduxer(state = [], action) {
       return listaNaMacierz(action.lists);
     case CREATE_EMPTY_MATRIX:
       return createEmptyMatrix(action.size, 0);
+    case CHANGE_GRAPH_SIZE:
+      return changeGraphSize(state, action.size);
     default:
       return state;
   }

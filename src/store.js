@@ -10,8 +10,10 @@ const initialState = {
   likes: {jeden: 12, dwa: 9},
   connectivity: {
     isGraphConnected: null, // domyślny stan flagi, przed sprawdzeniem grafu
+    blockGraphInputs: false, // domyślnie nie blokujemy wpisywania grafu
   },
-  matrix: [] // graf w formie macierzy sąsiedztwa
+  matrix: [], // graf w formie macierzy sąsiedztwa
+  graphSize: 3,
 };
 
 const enhancers = [];

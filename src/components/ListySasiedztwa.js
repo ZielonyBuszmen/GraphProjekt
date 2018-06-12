@@ -32,7 +32,6 @@ class ListySasiedztwa extends React.Component {
     let result = [];
     for (let i = 0; i < max; i++) {
       const value = list[i] != null ? list[i] : '';
-      console.log(list[i], startNode, i);
       result = immutablePush(result, <input type="text" value={value} style={{width: '35px'}} onChange={(e) => this.handleChange(e, startNode, i)}/>)
     }
     return result;

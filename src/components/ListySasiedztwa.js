@@ -48,7 +48,6 @@ class ListySasiedztwa extends React.Component {
     return (
       <div>
         <hr/>
-        Tutaj komponent z inputami z listą sąsiedztwa<br/>
         {this.listRenderer()}
         <hr/>
       </div>

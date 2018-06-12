@@ -1,8 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { increment } from '../actions/actionCreators';
 import MacierzSasiedztwa from './MacierzSasiedztwa';
 import ListySasiedztwa from './ListySasiedztwa';
+import { Row, Col, Button } from 'reactstrap';
+import ConnectivityButtonChecker from './ConnectivityButtonChecker';
+import '../css/style.css';
+import BlockMask from './BlockMask';
 
 class Home extends React.Component {
   render() {
@@ -10,18 +13,29 @@ class Home extends React.Component {
       <h1>Home</h1>
       <p>Welcome home!</p>
       <br/>
-      <MacierzSasiedztwa size={4} />
-      <br/>
-      Pierwszy licznik <b>{this.props.likes.jeden}</b>
-      <button onClick={this.props.zwiekszLicznikJeden}>Wiecyj</button>
-      <br/>
-
-      Drugi licznik <b>{this.props.likes.dwa}</b>
-      <button onClick={this.props.zwiekszLicznikDwa}>Wiecyj</button>
-      <hr/>
-      {this.props.matrix}
-      <hr/>
-      <ListySasiedztwa />
+      <Row>
+        <Col>
+          <BlockMask/>
+          <Row>
+            <Col>
+              Wybierz ilosc wiercholkow:
+            </Col>
+          </Row>
+          <Row>
+            <Col md='8'>
+              <MacierzSasiedztwa size={4}/>
+            </Col>
+            <Col md='4'>
+              <ListySasiedztwa/>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <ConnectivityButtonChecker/>
+        </Col>
+      </Row>
     </div>;
   }
 
@@ -40,10 +54,7 @@ const mapStateToProps = (state) => {
 // }, dispatch);
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-    zwiekszLicznikJeden: () => dispatch(increment('jeden', 'ble')),
-    zwiekszLicznikDwa: () => dispatch(increment('dwa', 'ble')),
-  }
+  return {}
 };
 
 export default connect(

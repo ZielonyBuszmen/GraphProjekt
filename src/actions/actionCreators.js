@@ -1,7 +1,5 @@
-// przykładowy action creator
-
 import {INCREMENT_LIKES} from '../reducers/likesReducer';
-import {CHECK_GRAPH_CONNECTIVITY} from '../reducers/connectivityReducer';
+import { BLOCK_GRAPH_INPUTS, CHECK_GRAPH_CONNECTIVITY } from '../reducers/connectivityReducer';
 import { CREATE_EMPTY_MATRIX, LISTY_SASIEDZTWA_CHANGED, MACIERZ_SASIEDZTWA_CHANGED } from '../reducers/matrixReducer';
 
 export function increment(ktory, info) {
@@ -17,7 +15,7 @@ export function increment(ktory, info) {
  * @param graph - array[][], graf w formie macierzy sąsiedztwa
  * @return {{type, graph: *}}
  */
-export function ckeckGraphConnectivity(graph) {
+export function checkGraphConnectivity(graph) {
   return {
     type: CHECK_GRAPH_CONNECTIVITY,
     graph,
@@ -58,5 +56,16 @@ export function listySasiedztwaChanged(lists) {
   return {
     type: LISTY_SASIEDZTWA_CHANGED,
     lists
+  }
+}
+
+/**
+ * @param block - boolean
+ * @returns {{type: string, block: boolean}}
+ */
+export function blockGraphInputs(block = true) {
+  return {
+    type: BLOCK_GRAPH_INPUTS,
+    block
   }
 }

@@ -9,6 +9,7 @@ import {createEmptyArray, Stack} from '../helpers';
 
 export const CHECK_GRAPH_CONNECTIVITY = 'connectivity/CHECK_GRAPH_CONNECTIVITY';
 export const RESET_STATUS = 'RESET_STATUS';
+export const BLOCK_GRAPH_INPUTS = 'BLOCK_GRAPH_INPUTS';
 
 /**
  * Główna funkcja, którą dostarcza ten reducer to `connectivity()`.
@@ -49,6 +50,12 @@ export default function connectivity(state = [], action) {
       const resettedState = {...state};
       resettedState.isGraphConnected = null;
       return resettedState;
+
+    case BLOCK_GRAPH_INPUTS:
+      const blockedState = {...state};
+      blockedState.blockGraphInputs = action.block;
+      return blockedState;
+
     default:
       return state;
   }

@@ -26,7 +26,7 @@ class MacierzSasiedztwa extends React.Component {
     if (this.props.matrix.length === 0) return '';
     const value = this.props.matrix[col][row] || '';
     return (
-      <input type="text" key={key} value={value} placeholder={0}
+      <input size={2} type="text" key={key} value={value} placeholder={0}
              onChange={(e) => this.handleChange(e, col, row)}/>
     );
   };
@@ -40,7 +40,9 @@ class MacierzSasiedztwa extends React.Component {
     const {size} = this.props;
     return (
       <div>
+        <hr/>
         {this.prepareInputsArray(size)}
+        <hr/>
       </div>
     );
   }

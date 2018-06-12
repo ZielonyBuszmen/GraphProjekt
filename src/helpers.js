@@ -113,3 +113,22 @@ export class Stack {
     return !this.items.length;
   }
 }
+
+/**
+ * Change matrix Size
+ *
+ * @param {Array[][]} matrix
+ * @param newSize - new size of matrix
+ * @returns {Array}
+ */
+export function changeGraphSize(matrix, newSize) {
+  console.log('asd', matrix, newSize);
+  const result = createEmptyMatrix(newSize, 0);
+  const size = matrix.length > newSize ? newSize : matrix.length;
+  for (let i = 0; i < size; i++) {
+    for (let j = 0; j < size; j++) {
+      result[i][j] = matrix[i][j];
+    }
+  }
+  return result;
+}

@@ -6,9 +6,13 @@ import { Row, Col, Button } from 'reactstrap';
 import ConnectivityButtonChecker from './ConnectivityButtonChecker';
 import '../css/style.css';
 import BlockMask from './BlockMask';
+import VertexQuantityInput from './VertexQuantityInput';
 
 class Home extends React.Component {
+
   render() {
+    const {graphSize} = this.props;
+
     return <div>
       <h1>Home</h1>
       <p>Welcome home!</p>
@@ -18,12 +22,12 @@ class Home extends React.Component {
           <BlockMask/>
           <Row>
             <Col>
-              Wybierz ilosc wiercholkow:
+              <VertexQuantityInput/>
             </Col>
           </Row>
           <Row>
             <Col md='8'>
-              <MacierzSasiedztwa size={4}/>
+              <MacierzSasiedztwa size={graphSize}/>
             </Col>
             <Col md='4'>
               <ListySasiedztwa/>
@@ -39,13 +43,14 @@ class Home extends React.Component {
     </div>;
   }
 
-};
+}
 
 
 const mapStateToProps = (state) => {
   return {
     likes: state.likes,
     matrix: state.matrix,
+    graphSize: state.graphSize,
   };
 };
 

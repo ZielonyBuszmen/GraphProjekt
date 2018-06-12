@@ -30,6 +30,7 @@ import { Route, Link } from 'react-router-dom';
 
 
 ### TODO lista:
+- Branch - przed dokończeniem - czyli przed zrobieniem wszstkich zadań z projektu
 - [ ] Wielki przycisk "Sprawdź spójność"
 - [ ] Input do wpisania ilości wierchołków i przycisk "OK" zatwierdzający to
 - [ ] Przycisk "reset", który resetuje stan aplikacji do początkowego (puste formularze, itp)

@@ -28,11 +28,11 @@ class VertexQuantityInput extends React.Component {
       <Col>
         <form onSubmit={this.handleSubmit}>
           <FormGroup>
-            <Label for="exampleEmail">Ilość wierchołków: </Label>
+            <Label for="exampleEmail">Ilość wierzchołków: </Label>
             <InputGroup>
               <Input type="text" name="qty" id="qty" size={4} value={this.state.qty} onChange={this.changeQty}/>
               <InputGroupAddon addonType="append">
-                <Button onClick={this.handleSubmit}>Ok!</Button>
+                <Button color="info" onClick={this.handleSubmit}>OK</Button>
               </InputGroupAddon>
             </InputGroup>
           </FormGroup>

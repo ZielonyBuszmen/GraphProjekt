@@ -21,8 +21,8 @@ class ConnectivityButtonChecker extends React.Component {
   messageRenderer = () => {
     const {connectivity} = this.props;
 
-    const successMessage = <span>Graf jest silnie spójny!</span>;
-    const failMessage = <span>Graf nie jest silnie spójny.</span>;
+    const successMessage = <span  className="text-success text-md-right">Graf jest silnie spójny!</span>;
+    const failMessage = <span className="text-danger text-md-right">Graf nie jest silnie spójny.</span>;
 
     if (connectivity.blockGraphInputs) {
       return connectivity.isGraphConnected ? successMessage : failMessage

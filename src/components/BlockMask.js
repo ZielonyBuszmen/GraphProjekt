@@ -13,7 +13,7 @@ class BlockMask extends React.Component {
     <div className='block'>
       <Row>
         <Col className='text-center'>
-          <Button color="secondary" size='lg' onClick={this.unlockMask}>Edycja</Button>
+          <Button style={{'color': '#ffffff','backgroundColor': '#ff2953'}} size='lg' onClick={this.unlockMask}>Edycja</Button>
         </Col>
       </Row>
     </div>;

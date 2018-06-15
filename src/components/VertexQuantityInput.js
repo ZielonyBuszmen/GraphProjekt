@@ -32,7 +32,7 @@ class VertexQuantityInput extends React.Component {
             <InputGroup>
               <Input type="text" name="qty" id="qty" size={4} value={this.state.qty} onChange={this.changeQty}/>
               <InputGroupAddon addonType="append">
-                <Button color="info" onClick={this.handleSubmit}>OK</Button>
+                <Button style={{'color': '#ffffff','backgroundColor': '#6B0F19'}} onClick={this.handleSubmit}>OK</Button>
               </InputGroupAddon>
             </InputGroup>
           </FormGroup>

@@ -15,11 +15,12 @@ class Home extends React.Component {
 
     return <div>
       <h1>Witaj!</h1>
-      <p>Silnie spójna składowa jest maksymalnym podgrafem, w którym istnieją ścieżki pomiędzy każdymi dwoma wierzchołkami.
+      <p>Najpierw trochę teorii - silnie spójna składowa jest maksymalnym podgrafem, w którym istnieją ścieżki pomiędzy każdymi dwoma wierzchołkami.
           Jeśli podgraf ten obejmuje wszystkie wierzchołki grafu, to mówimy, że dany graf skierowany jest silnie spójny (w grafach nieskierowanych każdy graf spójny jest również silnie spójny).
+
           Aby sprawdzić czy graf jest silnie spójny podaj liczbę wierzchołków, a później uzupełnij macierz sąsiedztwa lub listę sąsiedztw.</p>
       <br/>
-      <a href='' className='btn btn-danger'>Od nowa!</a>
+      <a href='' className='btn' style={{'color': '#ffffff','backgroundColor': '#6B0F19'}}>Od nowa!</a>
       <Row>
         <Col>
           <BlockMask/>
@@ -30,10 +31,10 @@ class Home extends React.Component {
           </Row>
             <Row>
                 <Col md='8'>
-                    Macierz sąsiedztwa
+                    Macierz sąsiedztwa:
                 </Col>
                 <Col md='4'>
-                    Lista sąsiedztw
+                    Lista sąsiedztw:
                 </Col>
             </Row>
             <Row>
@@ -48,9 +49,10 @@ class Home extends React.Component {
       </Row>
       <Row>
         <Col>
-          <ConnectivityButtonChecker/>
+          <ConnectivityButtonChecker/><br/><br/><br/>
         </Col>
       </Row>
+          Autorzy: Krzysztof Komar i Patrycja Madyda (Informatyka rok II, semestr IV)
     </div>;
   }
 

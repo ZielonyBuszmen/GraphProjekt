@@ -5,7 +5,7 @@ import {Button, Row, Container, Col} from 'reactstrap';
 import Header from "./Header";
 
 const App = () => (
-  <div>
+  <div style={{'color': '#2c2626','backgroundColor': '#fbefef'}}>
     <header>
       <Header />
     </header>

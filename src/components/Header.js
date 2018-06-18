@@ -21,7 +21,7 @@ class Header extends React.Component {
       <div>
         <Navbar light expand="md" style={{'backgroundColor': '#290004'}}>
           <Container>
-              <NavbarBrand style={{'color': '#efe7e7'}} href="/"><b>Program do sprawdzania silnej spójności grafów</b></NavbarBrand>
+              <NavbarBrand style={{'color': '#efe7e7'}} href="/"><b>Silna spójność grafów</b></NavbarBrand>
           <NavbarToggler />
           </Container>
         </Navbar>

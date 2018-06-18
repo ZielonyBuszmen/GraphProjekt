@@ -1,6 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { createEmptyMatrix, macierzSasiedztwaChanged } from '../actions/actionCreators';
+import { Input } from 'reactstrap';
 
 class MacierzSasiedztwa extends React.Component {
 
@@ -9,25 +10,43 @@ class MacierzSasiedztwa extends React.Component {
     props.createEmptyMatrix(props.size);
   }
 
-  prepareInputsArray = (size) => {
-    const array = [];
-    let key = 0;
+  createNumberRow = (size) => {
+    const result = [];
+    result.push(<td></td>);
     for (let i = 0; i < size; i++) {
-      for (let j = 0; j < size; j++) {
-        array.push(this.inputRenderer(key, j, i));
-        key++;
-      }
-      array.push(<br key={size * size + i}/>); // duży key, bo się pluło
+      result.push(<td style={{textAlign: 'center'}}>{i}</td>)
     }
-    return array;
+    return <tr>{result}</tr>
+  };
+
+
+  prepareInputsArray = (size) => {
+    const rows = [];
+    rows.push(this.createNumberRow(size));
+    for (let i = 0; i < size; i++) {
+      const elements = [];
+      for (let j = 0; j < size; j++) {
+        elements.push(this.inputRenderer(j, j, i));
+      }
+      rows.push(
+        <tr key={i}>
+          <td className='pr-2'>{i}</td>
+          {elements}
+        </tr>
+      );
+    }
+    return rows;
   };
 
   inputRenderer = (key, row, col) => {
     if (this.props.matrix.length === 0) return '';
     const value = this.props.matrix[col][row] || '';
     return (
-      <input size={2} type="text" key={key} value={value} placeholder={0}
-             onChange={(e) => this.handleChange(e, col, row)}/>
+      <td>
+        <Input className='form-control' maxlength={2} style={{width: '50px'}} type="text" key={key} value={value}
+               placeholder={0}
+               onChange={(e) => this.handleChange(e, col, row)}/>
+      </td>
     );
   };
 
@@ -39,10 +58,10 @@ class MacierzSasiedztwa extends React.Component {
   render() {
     const {size} = this.props;
     return (
-      <div>
-        <hr/>
-        {this.prepareInputsArray(size)}
-        <hr/>
+      <div className='macierzSasiedztwa'>
+        <table>
+          {this.prepareInputsArray(size)}
+        </table>
       </div>
     );
   }

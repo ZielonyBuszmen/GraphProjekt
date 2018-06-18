@@ -1,4 +1,5 @@
 import React from 'react';
+import { Input } from 'reactstrap';
 import { listySasiedztwaChanged } from '../actions/actionCreators';
 import { connect } from 'react-redux';
 import { immutablePush, macierzNaListe } from '../helpers';
@@ -15,7 +16,7 @@ class ListySasiedztwa extends React.Component {
     const lists = macierzNaListe(matrix);
     let result = [];
     lists.map((connectedList, node) => {
-      result[node] = <span key={node}>{node} - {this.inputRowRenderer(connectedList, node)}<br/></span>;
+      result[node] = <tr key={node}>{this.inputRowRenderer(connectedList, node)}<br/></tr>;
     });
     return result;
   }
@@ -29,12 +30,14 @@ class ListySasiedztwa extends React.Component {
    */
   inputRowRenderer = (list, startNode) => {
     let max = list.length < this.props.matrix.length ? list.length + 1 : list.length;
-    let result = [];
+    const row = [];
+    row.push(<td>{startNode} - </td>);
     for (let i = 0; i < max; i++) {
       const value = list[i] != null ? list[i] : '';
-      result = immutablePush(result, <input type="text" value={value} style={{width: '35px'}} onChange={(e) => this.handleChange(e, startNode, i)}/>)
+      row.push(<td><Input type="text" maxlength={2}
+        value={value} style={{width: '50px'}} onChange={(e) => this.handleChange(e, startNode, i)}/></td>);
     }
-    return result;
+    return row;
   };
 
   handleChange = (event, startNode, listElement) => {
@@ -46,10 +49,10 @@ class ListySasiedztwa extends React.Component {
 
   render() {
     return (
-      <div>
-        <hr/>
-        {this.listRenderer()}
-        <hr/>
+      <div className='macierzSasiedztwa'>
+        <table>
+          {this.listRenderer()}
+        </table>
       </div>
     );
   }

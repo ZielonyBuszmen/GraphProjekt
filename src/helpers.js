@@ -74,8 +74,11 @@ export function listaNaMacierz(lists) {
   let result = createEmptyMatrix(lists.length, 0);
   lists.map((row, index) =>
     row.map(value => {
-      result[index][value] = 1;
+      if (Number.isInteger(value)) {
+        result[index][value] = 1;
+      }
     }));
+  console.log('resulltltltl', result);
   return result;
 }
 

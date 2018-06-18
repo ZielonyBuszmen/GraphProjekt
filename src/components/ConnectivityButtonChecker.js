@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Button } from 'reactstrap';
+import { Row, Col, Button, Alert} from 'reactstrap';
 import { blockGraphInputs, checkGraphConnectivity } from '../actions/actionCreators';
 import { connect } from 'react-redux';
 
@@ -21,8 +21,8 @@ class ConnectivityButtonChecker extends React.Component {
   messageRenderer = () => {
     const {connectivity} = this.props;
 
-    const successMessage = <span>Graf jest silnie spójny!</span>;
-    const failMessage = <span>Graf nie jest silnie spójny.</span>;
+      const successMessage = <Alert  className="alert-success"><b>Graf jest silnie spójny!</b></Alert>;
+      const failMessage = <Alert className="alert-danger"><b>Graf nie jest silnie spójny.</b></Alert>;
 
     if (connectivity.blockGraphInputs) {
       return connectivity.isGraphConnected ? successMessage : failMessage
@@ -33,8 +33,8 @@ class ConnectivityButtonChecker extends React.Component {
   render() {
     return (
       <div>
-        <Button color="primary" size='lg' onClick={this.checkConnectivityClick}>Sprawdź silną spójność</Button>
-        {this.messageRenderer()}
+          {this.messageRenderer()}
+        <Button style={{'color': '#ffffff','backgroundColor': '#6B0F19'}} size='lg' onClick={this.checkConnectivityClick}>Sprawdź silną spójność</Button>
       </div>
     );
   }

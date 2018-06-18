@@ -19,9 +19,9 @@ class Header extends React.Component {
   render() {
     return(
       <div>
-        <Navbar light expand="md" style={{'backgroundColor': '#e3f2fd'}}>
+        <Navbar light expand="md" style={{'backgroundColor': '#290004'}}>
           <Container>
-          <NavbarBrand href="/">Nazwa serwisu</NavbarBrand>
+              <NavbarBrand style={{'color': '#efe7e7'}} href="/"><b>Program do sprawdzania silnej spójności grafów</b></NavbarBrand>
           <NavbarToggler />
           </Container>
         </Navbar>

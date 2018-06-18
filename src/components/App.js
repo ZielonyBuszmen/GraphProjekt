@@ -13,7 +13,7 @@ class App extends React.Component {
     const containerType = (this.props.graphSize >= 12) ? 'container-fluid' : 'container';
 
     return (
-      <div style={{'color': '#2c2626', 'backgroundColor': '#fbefef'}}>
+      <div>
         <header>
           <Header/>
         </header>

@@ -1,12 +1,12 @@
 .block {
   z-index: 20;
-  background: rgba(255,255,255, 0.65 );
+  background: rgba(255, 255, 255, 0.65);
   display: block;
   position: absolute;
   width: 100%;
   height: 100%;
 }
 
-.macierzSasiedztwa{
+.macierzSasiedztwa {
   overflow-x: auto;
 }

@@ -78,7 +78,6 @@ export function listaNaMacierz(lists) {
         result[index][value] = 1;
       }
     }));
-  console.log('resulltltltl', result);
   return result;
 }
 
@@ -125,7 +124,6 @@ export class Stack {
  * @returns {Array}
  */
 export function changeGraphSize(matrix, newSize) {
-  console.log('asd', matrix, newSize);
   const result = createEmptyMatrix(newSize, 0);
   const size = matrix.length > newSize ? newSize : matrix.length;
   for (let i = 0; i < size; i++) {

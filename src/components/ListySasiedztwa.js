@@ -2,7 +2,7 @@ import React from 'react';
 import { Input } from 'reactstrap';
 import { listySasiedztwaChanged } from '../actions/actionCreators';
 import { connect } from 'react-redux';
-import { immutablePush, macierzNaListe } from '../helpers';
+import { macierzNaListe } from '../helpers';
 
 class ListySasiedztwa extends React.Component {
 

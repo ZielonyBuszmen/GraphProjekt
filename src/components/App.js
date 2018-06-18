@@ -1,10 +1,8 @@
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
 import Home from './Home';
-import { Button, Row, Container, Col } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import Header from './Header';
 import { connect } from 'react-redux';
-import { listySasiedztwaChanged } from '../actions/actionCreators';
 
 
 class App extends React.Component {

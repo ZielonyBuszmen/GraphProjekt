@@ -7,7 +7,6 @@ import rootReducer from './reducers'
 export const history = createHistory();
 
 const initialState = {
-  likes: {jeden: 12, dwa: 9},
   connectivity: {
     isGraphConnected: null, // domyślny stan flagi, przed sprawdzeniem grafu
     blockGraphInputs: false, // domyślnie nie blokujemy wpisywania grafu

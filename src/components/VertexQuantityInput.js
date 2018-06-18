@@ -1,6 +1,6 @@
 import React from 'react';
-import { Row, Col, Button, Form, FormGroup, Label, Input, InputGroup, InputGroupAddon } from 'reactstrap';
-import { blockGraphInputs, graphSizeChanged } from '../actions/actionCreators';
+import { Col, Button, FormGroup, Label, Input, InputGroup, InputGroupAddon } from 'reactstrap';
+import { graphSizeChanged } from '../actions/actionCreators';
 import { connect } from 'react-redux';
 
 class VertexQuantityInput extends React.Component {

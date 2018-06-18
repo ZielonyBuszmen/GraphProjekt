@@ -2,7 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import MacierzSasiedztwa from './MacierzSasiedztwa';
 import ListySasiedztwa from './ListySasiedztwa';
-import { Row, Col, Button } from 'reactstrap';
+import { Row, Col } from 'reactstrap';
 import ConnectivityButtonChecker from './ConnectivityButtonChecker';
 import '../css/style.css';
 import BlockMask from './BlockMask';
@@ -52,18 +52,12 @@ class Home extends React.Component {
 
 }
 
-
 const mapStateToProps = (state) => {
   return {
-    likes: state.likes,
     matrix: state.matrix,
     graphSize: state.graphSize,
   };
 };
-
-// const mapDispatchToProps = (dispatch) => bindActionCreators({
-//   changePage: () => push('/about-us')
-// }, dispatch);
 
 const mapDispatchToProps = (dispatch) => {
   return {}

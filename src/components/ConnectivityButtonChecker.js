@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Button, Alert} from 'reactstrap';
+import { Button, Alert} from 'reactstrap';
 import { blockGraphInputs, checkGraphConnectivity } from '../actions/actionCreators';
 import { connect } from 'react-redux';
 

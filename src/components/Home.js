@@ -46,7 +46,6 @@ class Home extends React.Component {
           <ConnectivityButtonChecker/><br/><br/><br/>
         </Col>
       </Row>
-      Autorzy: Patrycja Madyda i Krzysztof Komar (Informatyka rok II, semestr IV)
     </div>;
   }
 

@@ -87,7 +87,7 @@ function checkStrongConnectivityOfGraph(graph) {
  * @param startedNode - wierchołek, z którego startujemy, domyślnie pierwszy (czyli 0)
  * @return boolean
  */
-function checkConnectivityOfGraph(graph, startedNode = 0) {
+export function checkConnectivityOfGraph(graph, startedNode = 0) {
   const visited = createEmptyArray(graph.length, false);
   const stack = new Stack();
   let visitedCounter = 0;

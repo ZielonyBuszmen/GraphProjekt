@@ -4,6 +4,7 @@
   "homepage": "https://zielonybuszmen.github.io/GraphProjekt/",
   "private": true,
   "dependencies": {
+    "@types/jest": "^23.3.2",
     "bootstrap": "^4.0.0",
     "history": "^4.7.2",
     "react": "^16.2.0",

@@ -13,7 +13,6 @@ describe('checkConnectivityOfGraph', function () {
   });
 
   it('should return false, when graph is not connected', () => {
-    // tutej test
     expect(true).toBe(true);
     const graph = [
       [1, 1, 0],

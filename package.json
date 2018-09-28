@@ -16,11 +16,12 @@
     "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "@types/jest": "^23.3.2",
     "enzyme": "^3.6.0",
+    "enzyme-to-json": "^3.3.4",
     "gh-pages": "^1.1.0",
     "jest": "^23.6.0",
     "react-scripts": "1.1.1",
-    "@types/jest": "^23.3.2",
     "redux-devtools-extension": "^2.13.2"
   },
   "scripts": {

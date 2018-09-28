@@ -1,7 +1,7 @@
 import { shallow } from 'enzyme';
 import toJson from 'enzyme-to-json';
 
-describe('App', function () {
+describe('Provider', function () {
   it('should render', function () {
     // todo
     // const component = shallow(<MojKomponent />);

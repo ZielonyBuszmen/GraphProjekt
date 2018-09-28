@@ -1,17 +1,13 @@
-import toJson from 'enzyme-to-json';
-import { BlockMask } from "../../components/BlockMask";
 import React from 'react';
+import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
+import '../../enzymeConfiguration';
 
-import Enzyme from 'enzyme';
-import Adapter from 'enzyme-adapter-react-16';
-beforeAll(() => {
-  Enzyme.configure({ adapter: new Adapter() });
-});
+import { BlockMask } from '../../components/BlockMask';
 
 describe('BlockMask', () => {
   it('should render', function () {
-    const component = shallow(<BlockMask />);
+    const component = shallow(<BlockMask/>);
     expect(toJson(component)).toMatchSnapshot();
     expect(true).toBeTruthy();
   });

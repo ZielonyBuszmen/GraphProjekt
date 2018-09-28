@@ -5,6 +5,7 @@ import connectivity, {
   checkConnectivityOfGraph,
   checkStrongConnectivityOfGraph,
 } from '../../reducers/connectivityReducer';
+import {blockGraphInputs, checkGraphConnectivity} from "../../actions/actionCreators";
 
 describe('checkConnectivityOfGraph', () => {
   it('should empty graph', () => {
@@ -57,13 +58,10 @@ describe('checkStrongConnectivityOfGraph', () => {
 describe('connectivity', () => {
   it('action type => CHECK_GRAPH_CONNECTIVITY', () => {
     const state = {test: 'test'};
-    const action = {
-      type: CHECK_GRAPH_CONNECTIVITY,
-      graph: [
-        [0, 1],
-        [1, 0],
-      ],
-    };
+    const action = checkGraphConnectivity([
+      [0, 1],
+      [1, 0],
+    ]);
     const expected = {
       test: 'test',
       isGraphConnected: true,
@@ -89,10 +87,7 @@ describe('connectivity', () => {
 
   it('action type => BLOCK_GRAPH_INPUTS', () => {
     const state = {test: 'test'};
-    const action = {
-      type: BLOCK_GRAPH_INPUTS,
-      block: false,
-    };
+    const action = blockGraphInputs(false);
     const expected = {
       test: 'test',
       blockGraphInputs: false,

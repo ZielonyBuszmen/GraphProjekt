@@ -17,6 +17,6 @@ describe('graphSizeReducer', () => {
       type: 'other',
     };
     const result = graphSizeReducer(state, action);
-    expect(result).toEqual(result);
+    expect(result).toEqual(state);
   });
 });

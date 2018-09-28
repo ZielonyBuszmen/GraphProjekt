@@ -1,6 +1,6 @@
 import { BLOCK_GRAPH_INPUTS, CHECK_GRAPH_CONNECTIVITY } from '../reducers/connectivityReducer';
 import { CREATE_EMPTY_MATRIX, LISTY_SASIEDZTWA_CHANGED, MACIERZ_SASIEDZTWA_CHANGED } from '../reducers/matrixReducer';
-import { CHANGE_GRAPH_SIZE } from '../reducers/graphSizeRecuder';
+import { CHANGE_GRAPH_SIZE } from '../reducers/graphSizeReducer';
 
 /**
  * @param graph - array[][], graf w formie macierzy sąsiedztwa

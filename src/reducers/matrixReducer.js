@@ -1,5 +1,5 @@
 import { changeGraphSize, copyMatrix, createEmptyMatrix, listToMatrix } from '../helpers';
-import { CHANGE_GRAPH_SIZE } from './graphSizeRecuder';
+import { CHANGE_GRAPH_SIZE } from './graphSizeReducer';
 
 export const MACIERZ_SASIEDZTWA_CHANGED = 'matrix/MACIERZ_SASIEDZTWA_CHANGED';
 export const LISTY_SASIEDZTWA_CHANGED = 'matrix/LISTY_SASIEDZTWA_CHANGED';

@@ -3,7 +3,7 @@ import { routerReducer } from 'react-router-redux'
 
 import connectivityReducer from './connectivityReducer';
 import matrixReduxer from './matrixReducer';
-import graphSizeReducer from './graphSizeRecuder';
+import graphSizeReducer from './graphSizeReducer';
 
 const rootReducer = combineReducers({
   routing: routerReducer,

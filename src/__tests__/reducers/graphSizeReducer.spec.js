@@ -1,4 +1,4 @@
-import graphSizeReducer, {CHANGE_GRAPH_SIZE} from "../../reducers/graphSizeRecuder";
+import graphSizeReducer, {CHANGE_GRAPH_SIZE} from "../../reducers/graphSizeReducer";
 
 describe('graphSizeReducer', () => {
   it('action type => CHANGE_GRAPH_SIZE', () => {

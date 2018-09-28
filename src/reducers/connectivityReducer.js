@@ -68,7 +68,7 @@ export default function connectivity(state = [], action) {
  * @param graph
  * @returns {boolean} - true, jeśli graf jest silnie spójny
  */
-function checkStrongConnectivityOfGraph(graph) {
+export function checkStrongConnectivityOfGraph(graph) {
   for (const node in graph) {
     const result = checkConnectivityOfGraph(graph, node);
     if (result === false) {

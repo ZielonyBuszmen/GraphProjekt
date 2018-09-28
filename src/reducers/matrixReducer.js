@@ -1,11 +1,11 @@
 import { changeGraphSize, copyMatrix, createEmptyMatrix, listToMatrix } from '../helpers';
-import { CHANGE_GRAPH_SIZE } from './graphSizeRecuder';
+import { CHANGE_GRAPH_SIZE } from './graphSizeReducer';
 
 export const MACIERZ_SASIEDZTWA_CHANGED = 'matrix/MACIERZ_SASIEDZTWA_CHANGED';
 export const LISTY_SASIEDZTWA_CHANGED = 'matrix/LISTY_SASIEDZTWA_CHANGED';
 export const CREATE_EMPTY_MATRIX = 'matrix/CREATE_EMPTY_MATRIX';
 
-function matrixReduxer(state = [], action) {
+function matrixReducer(state = [], action) {
   switch (action.type) {
     case MACIERZ_SASIEDZTWA_CHANGED: // graf w formie macierzy sąsiedztwa się zmienił - wystarczy go zapisać do store
       const copiedMatrix = copyMatrix(state);
@@ -22,4 +22,4 @@ function matrixReduxer(state = [], action) {
   }
 }
 
-export default matrixReduxer;
+export default matrixReducer;

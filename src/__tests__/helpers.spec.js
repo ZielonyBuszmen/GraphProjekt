@@ -3,8 +3,8 @@ import {
   copyMatrix,
   immutablePush,
   createEmptyArray,
-  macierzNaListe,
-  listaNaMacierz,
+  matrixToList,
+  listToMatrix,
   Stack,
   changeGraphSize,
 } from "../helpers";
@@ -67,7 +67,7 @@ describe('createEmptyArray', () => {
   });
 });
 
-describe('macierzNaListe', () => { // todo można zmienić nazwę na eng
+describe('matrixToList', () => {
   it('should change matrix to list', function () {
     const matrix = [
       [1, 2, 3],
@@ -79,12 +79,12 @@ describe('macierzNaListe', () => { // todo można zmienić nazwę na eng
       [1, 2],
       [0],
     ];
-    const result = macierzNaListe(matrix);
+    const result = matrixToList(matrix);
     expect(result).toEqual(expected);
   });
 });
 
-describe('listaNaMacierz', () => { // todo można zmienic nazwe na eng
+describe('listToMatrix', () => {
   it('should change list to matrix', function () {
     const list = [
       [2, 1, 0],
@@ -96,7 +96,7 @@ describe('listaNaMacierz', () => { // todo można zmienic nazwe na eng
       [1, 1, 0],
       [0, 0, 0],
     ];
-    const result = listaNaMacierz(list);
+    const result = listToMatrix(list);
     expect(result).toEqual(expected);
   });
 });

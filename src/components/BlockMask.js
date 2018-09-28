@@ -3,7 +3,7 @@ import { Row, Col, Button } from 'reactstrap';
 import { connect } from 'react-redux';
 import { blockGraphInputs } from '../actions/actionCreators';
 
-class BlockMask extends React.Component {
+export class BlockMask extends React.Component {
 
   unlockMask = () => {
     this.props.unlockGraphInputs();

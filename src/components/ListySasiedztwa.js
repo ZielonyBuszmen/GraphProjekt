@@ -2,7 +2,7 @@ import React from 'react';
 import { Input } from 'reactstrap';
 import { listySasiedztwaChanged } from '../actions/actionCreators';
 import { connect } from 'react-redux';
-import { macierzNaListe } from '../helpers';
+import { matrixToList } from '../helpers';
 
 class ListySasiedztwa extends React.Component {
 
@@ -13,7 +13,7 @@ class ListySasiedztwa extends React.Component {
    */
   listRenderer() {
     const {matrix} = this.props;
-    const lists = macierzNaListe(matrix);
+    const lists = matrixToList(matrix);
     let result = [];
     lists.map((connectedList, node) => {
       result[node] = <tr key={node}>{this.inputRowRenderer(connectedList, node)}<br/></tr>;
@@ -42,7 +42,7 @@ class ListySasiedztwa extends React.Component {
 
   handleChange = (event, startNode, listElement) => {
     const endNode = parseInt(event.target.value);
-    const lists = macierzNaListe(this.props.matrix);
+    const lists = matrixToList(this.props.matrix);
     lists[startNode][listElement] = endNode;
     this.props.listySasiedztwaChanged(lists);
   };

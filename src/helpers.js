@@ -2,9 +2,9 @@
  * Tutaj znajdują się wszystkie funkcje "pomocniki", takie jak implementacja stosu, łatwiejsze operowanie na tablicach itp
  */
 
-
 /**
  * Funkcja pomocnicza, tworzy pustą tablicę tablic (macierz)
+ *
  * @param nodes - ilość wierchołków w grafie
  * @param defaultValue - wartość domyślna, którą ma być wypełniona macierz
  * @return {Array}
@@ -22,6 +22,7 @@ export function createEmptyMatrix(nodes, defaultValue = null) {
 
 /**
  * Wykonuje 'deep copy' tablicy dwu wymiarowej (macierzy)
+ *
  * @param matrix - array[][]
  * @returns {array[][]}
  */
@@ -35,6 +36,7 @@ export function immutablePush(arr, newEntry) {
 
 /**
  * Funkcja pomocnicza, tworzy pustą tablicę i wypełnia ją wartościami
+ *
  * @param length - długość tablicy
  * @param defaultValue - wartość domyślna, którą ma być wypełniona tablica. Tylko typ prosty. NIE MOŻE TO BYC OBIEKT ANI TABLICA! (powstaje błąd referencji)
  * @return {Array}
@@ -49,10 +51,11 @@ export function createEmptyArray(length, defaultValue = null) {
 
 /**
  * Zamienia macierz sąsiedztwa na listy sąsiedztwa
+ *
  * @param matrix - macierz sąsiedztwa
  * @return {Array[][]} - graf w formie list sąsiedztwa
  */
-export function macierzNaListe(matrix) {
+export function matrixToList(matrix) {
   const result = createEmptyArray(matrix.length);
   matrix.map((row, i) => {
     result[i] = [];
@@ -67,10 +70,11 @@ export function macierzNaListe(matrix) {
 
 /**
  * Zamienia listy sąsiedztwa na macierze sąsiedztwa
+ *
  * @param lists - listy sąsiedztwa
- * @return {Array[][]} - graf w formie macieerzy sąsiedztwa
+ * @return {Array[][]} - graf w formie macierzy sąsiedztwa
  */
-export function listaNaMacierz(lists) {
+export function listToMatrix(lists) {
   let result = createEmptyMatrix(lists.length, 0);
   lists.map((row, index) =>
     row.map(value => {
@@ -82,7 +86,7 @@ export function listaNaMacierz(lists) {
 }
 
 /**
- * Implementacja stosu
+ * Stack implementations
  */
 export class Stack {
   constructor() {
@@ -117,7 +121,7 @@ export class Stack {
 }
 
 /**
- * Change matrix Size
+ * Changes matrix size
  *
  * @param {Array[][]} matrix
  * @param newSize - new size of matrix

@@ -8,7 +8,7 @@ import '../css/style.css';
 import BlockMask from './BlockMask';
 import VertexQuantityInput from './VertexQuantityInput';
 
-class Home extends React.Component {
+export class Home extends React.Component {
 
   render() {
     const {graphSize} = this.props;
@@ -51,14 +51,14 @@ class Home extends React.Component {
 
 }
 
-const mapStateToProps = (state) => {
+ export const mapStateToProps = (state) => {
   return {
-    matrix: state.matrix,
-    graphSize: state.graphSize,
-  };
+     matrix: state.matrix,
+       graphSize: state.graphSize,
+   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {}
 };
 

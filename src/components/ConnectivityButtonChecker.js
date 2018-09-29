@@ -1,10 +1,9 @@
 import React from 'react';
-import { Button, Alert} from 'reactstrap';
+import { Button, Alert } from 'reactstrap';
 import { blockGraphInputs, checkGraphConnectivity } from '../actions/actionCreators';
 import { connect } from 'react-redux';
 
-class ConnectivityButtonChecker extends React.Component {
-
+export class ConnectivityButtonChecker extends React.Component {
 
   constructor() {
     super();
@@ -40,14 +39,14 @@ class ConnectivityButtonChecker extends React.Component {
   }
 }
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return {
     connectivity: state.connectivity,
     matrix: state.matrix,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     checkGraphConnectivity: (matrix) => dispatch(checkGraphConnectivity(matrix)),
     blockGraphInputs: () => dispatch(blockGraphInputs(true)),

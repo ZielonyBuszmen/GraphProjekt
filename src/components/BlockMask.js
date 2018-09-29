@@ -3,7 +3,7 @@ import { Row, Col, Button } from 'reactstrap';
 import { connect } from 'react-redux';
 import { blockGraphInputs } from '../actions/actionCreators';
 
-class BlockMask extends React.Component {
+export class BlockMask extends React.Component {
 
   unlockMask = () => {
     this.props.unlockGraphInputs();
@@ -25,13 +25,13 @@ class BlockMask extends React.Component {
 }
 
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return {
     blockGraphInputs: state.connectivity.blockGraphInputs,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     unlockGraphInputs: () => dispatch(blockGraphInputs(false)),
   }

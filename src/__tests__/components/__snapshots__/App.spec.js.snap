@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render 1`] = `
+<div>
+  <header>
+    <Header />
+  </header>
+  <main>
+    <div
+      className="container"
+    >
+      <Row
+        tag="div"
+      >
+        <Col
+          tag="div"
+          widths={
+            Array [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl",
+            ]
+          }
+        >
+          <Connect(Home) />
+        </Col>
+      </Row>
+    </div>
+  </main>
+</div>
+`;

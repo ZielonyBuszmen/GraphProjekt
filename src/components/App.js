@@ -5,7 +5,7 @@ import Header from './Header';
 import { connect } from 'react-redux';
 
 
-class App extends React.Component {
+export class App extends React.Component {
   render() {
 
     const containerType = (this.props.graphSize >= 12) ? 'container-fluid' : 'container';
@@ -31,12 +31,12 @@ class App extends React.Component {
 };
 
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return {
     graphSize: state.graphSize,
   };
 };
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {}
 };
 

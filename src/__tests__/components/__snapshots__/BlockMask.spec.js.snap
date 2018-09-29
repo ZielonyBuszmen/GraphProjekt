@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlockMask should render blocked mask 1`] = `
+<div
+  className="block"
+>
+  <Row
+    tag="div"
+  >
+    <Col
+      className="text-center"
+      tag="div"
+      widths={
+        Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ]
+      }
+    >
+      <Button
+        color="secondary"
+        onClick={[Function]}
+        size="lg"
+        style={
+          Object {
+            "backgroundColor": "#ff2953",
+            "color": "#ffffff",
+          }
+        }
+        tag="button"
+      >
+        Edycja
+      </Button>
+    </Col>
+  </Row>
+</div>
+`;
+
+exports[`BlockMask should render without props 1`] = `""`;

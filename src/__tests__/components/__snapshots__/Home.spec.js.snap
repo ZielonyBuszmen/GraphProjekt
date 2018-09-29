@@ -1,0 +1,124 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should render 1`] = `
+<div
+  className="mt-4"
+>
+  <p>
+    Silnie spójna składowa jest maksymalnym podgrafem, w którym istnieją ścieżki pomiędzy każdymi dwoma wierzchołkami. Jeśli podgraf ten obejmuje wszystkie wierzchołki grafu, to mówimy, że dany graf skierowany jest silnie spójny (w grafach nieskierowanych każdy graf spójny jest również silnie spójny). Aby sprawdzić czy graf jest silnie spójny podaj liczbę wierzchołków, a później uzupełnij macierz sąsiedztwa lub listę sąsiedztw.
+  </p>
+  <br />
+  <a
+    className="btn mb-4"
+    href=""
+    style={
+      Object {
+        "backgroundColor": "#6B0F19",
+        "color": "#ffffff",
+      }
+    }
+  >
+    Rozpocznij od nowa!
+  </a>
+  <Row
+    tag="div"
+  >
+    <Col
+      tag="div"
+      widths={
+        Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ]
+      }
+    >
+      <Connect(BlockMask) />
+      <Row
+        tag="div"
+      >
+        <Col
+          tag="div"
+          widths={
+            Array [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl",
+            ]
+          }
+        >
+          <Connect(VertexQuantityInput) />
+        </Col>
+      </Row>
+      <Row
+        tag="div"
+      >
+        <Col
+          md="8"
+          tag="div"
+          widths={
+            Array [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl",
+            ]
+          }
+        >
+          <b>
+            Macierz sąsiedztwa:
+          </b>
+          <Connect(MacierzSasiedztwa)
+            size={2}
+          />
+          <hr />
+        </Col>
+        <Col
+          md="4"
+          tag="div"
+          widths={
+            Array [
+              "xs",
+              "sm",
+              "md",
+              "lg",
+              "xl",
+            ]
+          }
+        >
+          <b>
+            Listy sąsiedztwa:
+          </b>
+          <Connect(ListySasiedztwa) />
+        </Col>
+      </Row>
+    </Col>
+  </Row>
+  <Row
+    tag="div"
+  >
+    <Col
+      tag="div"
+      widths={
+        Array [
+          "xs",
+          "sm",
+          "md",
+          "lg",
+          "xl",
+        ]
+      }
+    >
+      <Connect(ConnectivityButtonChecker) />
+      <br />
+      <br />
+      <br />
+    </Col>
+  </Row>
+</div>
+`;

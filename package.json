@@ -23,6 +23,7 @@
     "gh-pages": "^1.1.0",
     "jest": "^23.6.0",
     "react-scripts": "1.1.1",
+    "react-test-renderer": "^16.5.2",
     "redux-devtools-extension": "^2.13.2"
   },
   "scripts": {

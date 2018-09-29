@@ -1,7 +1,6 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
-import '../../enzymeConfiguration';
 import { VertexQuantityInput, mapDispatchToProps, mapStateToProps } from '../../components/VertexQuantityInput';
 import { graphSizeChanged } from '../../actions/actionCreators';
 

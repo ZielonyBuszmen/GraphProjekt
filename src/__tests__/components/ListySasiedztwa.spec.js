@@ -1,7 +1,6 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
-import '../../enzymeConfiguration';
 import { mapDispatchToProps, mapStateToProps, ListySasiedztwa } from '../../components/ListySasiedztwa';
 import { listySasiedztwaChanged } from '../../actions/actionCreators';
 

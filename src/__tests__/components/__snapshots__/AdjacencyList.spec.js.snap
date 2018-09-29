@@ -1,0 +1,80 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AdjacencyList should render 1`] = `
+<div
+  className="macierzSasiedztwa"
+>
+  <table>
+    <tr
+      key="0"
+    >
+      <td>
+        0
+         - 
+      </td>
+      <td>
+        <Input
+          maxlength={2}
+          onChange={[Function]}
+          style={
+            Object {
+              "width": "50px",
+            }
+          }
+          type="text"
+          value={0}
+        />
+      </td>
+      <td>
+        <Input
+          maxlength={2}
+          onChange={[Function]}
+          style={
+            Object {
+              "width": "50px",
+            }
+          }
+          type="text"
+          value={1}
+        />
+      </td>
+      <br />
+    </tr>
+    <tr
+      key="1"
+    >
+      <td>
+        1
+         - 
+      </td>
+      <td>
+        <Input
+          maxlength={2}
+          onChange={[Function]}
+          style={
+            Object {
+              "width": "50px",
+            }
+          }
+          type="text"
+          value={0}
+        />
+      </td>
+      <td>
+        <Input
+          maxlength={2}
+          onChange={[Function]}
+          style={
+            Object {
+              "width": "50px",
+            }
+          }
+          type="text"
+          value={1}
+        />
+      </td>
+      <br />
+    </tr>
+  </table>
+</div>
+`;

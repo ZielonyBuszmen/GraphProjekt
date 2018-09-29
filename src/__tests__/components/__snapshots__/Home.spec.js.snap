@@ -73,7 +73,7 @@ exports[`Home should render 1`] = `
           <b>
             Macierz sąsiedztwa:
           </b>
-          <Connect(MacierzSasiedztwa)
+          <Connect(AdjacencyMatrix)
             size={2}
           />
           <hr />
@@ -94,7 +94,7 @@ exports[`Home should render 1`] = `
           <b>
             Listy sąsiedztwa:
           </b>
-          <Connect(ListySasiedztwa) />
+          <Connect(AdjacencyList) />
         </Col>
       </Row>
     </Col>

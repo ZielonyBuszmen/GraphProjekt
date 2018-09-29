@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`VertexQuantityInput should render without props 1`] = `
+<Col
+  tag="div"
+  widths={
+    Array [
+      "xs",
+      "sm",
+      "md",
+      "lg",
+      "xl",
+    ]
+  }
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <FormGroup
+      tag="div"
+    >
+      <Label
+        for="exampleEmail"
+        tag="label"
+        widths={
+          Array [
+            "xs",
+            "sm",
+            "md",
+            "lg",
+            "xl",
+          ]
+        }
+      >
+        Ilość wierzchołków: 
+        <i>
+          (maksymalnie 20)
+        </i>
+      </Label>
+      <div
+        className="col-3"
+      >
+        <InputGroup
+          tag="div"
+        >
+          <Input
+            id="qty"
+            name="qty"
+            onChange={[Function]}
+            size="2"
+            type="text"
+          />
+          <InputGroupAddon
+            addonType="append"
+            tag="div"
+          >
+            <Button
+              color="secondary"
+              onClick={[Function]}
+              style={
+                Object {
+                  "backgroundColor": "#6B0F19",
+                  "color": "#ffffff",
+                }
+              }
+              tag="button"
+            >
+              OK
+            </Button>
+          </InputGroupAddon>
+        </InputGroup>
+      </div>
+    </FormGroup>
+  </form>
+</Col>
+`;

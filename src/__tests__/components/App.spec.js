@@ -1,7 +1,6 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
-import '../../enzymeConfiguration';
 import { App, mapDispatchToProps, mapStateToProps } from '../../components/App';
 
 describe('App', function () {

@@ -27,3 +27,7 @@ W przypadku braku `yarna` instalujemy go globalnie komendą `npm install -g yarn
 ```
 yarn deploy
 ```
+
+#### Słowniczek
+ - Adjacency list - Lista sąsiedztw
+ - Adjacency matrix - Macierz sąsiedztwa

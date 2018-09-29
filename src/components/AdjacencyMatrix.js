@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { createEmptyMatrix, macierzSasiedztwaChanged } from '../actions/actionCreators';
 import { Input } from 'reactstrap';
 
-class MacierzSasiedztwa extends React.Component {
+export class AdjacencyMatrix extends React.Component {
 
   constructor(props) {
     super(props);
@@ -68,12 +68,12 @@ class MacierzSasiedztwa extends React.Component {
 }
 
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return {
     matrix: state.matrix,
   };
 };
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     macierzSasiedztwaChanged: (row, col, value) => dispatch(macierzSasiedztwaChanged(row, col, value)),
     createEmptyMatrix: (size) => dispatch(createEmptyMatrix(size)),
@@ -83,4 +83,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(MacierzSasiedztwa);
+)(AdjacencyMatrix);

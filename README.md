@@ -31,3 +31,15 @@ yarn deploy
 #### Słowniczek
  - Adjacency list - Lista sąsiedztw
  - Adjacency matrix - Macierz sąsiedztwa
+ 
+ 
+ ### Stopień pokrycia kodu testami
+ 
+```
+=============================== Coverage summary ===============================
+Statements   : 84.77% ( 206/243 )
+Branches     : 69.12% ( 47/68 )
+Functions    : 97.5% ( 78/80 )
+Lines        : 89.08% ( 204/229 )
+================================================================================
+```

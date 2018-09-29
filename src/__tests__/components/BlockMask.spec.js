@@ -14,13 +14,19 @@ describe('BlockMask', () => {
   it('should render without props', function () {
     const component = shallow(<BlockMask/>);
     expect(toJson(component)).toMatchSnapshot();
-    expect(true).toBeTruthy();
   });
 
   it('should render blocked mask', function () {
     const component = shallow(<BlockMask blockGraphInputs/>);
     expect(component.find('.text-center')).toHaveLength(1);
     expect(toJson(component)).toMatchSnapshot();
+  });
+
+  it('should unlock mask', function () {
+    const unlockGraphInputsMock = jest.fn(() => {});
+    const component = shallow(<BlockMask blockGraphInputs unlockGraphInputs={unlockGraphInputsMock}/>);
+    component.find('Button').simulate('click');
+    expect(unlockGraphInputsMock.mock.calls.length).toBe(1);
   });
 });
 

@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConnectivityButtonChecker should render component 1`] = `
+<div>
+  <Button
+    color="secondary"
+    onClick={[Function]}
+    size="lg"
+    style={
+      Object {
+        "backgroundColor": "#6B0F19",
+        "color": "#ffffff",
+      }
+    }
+    tag="button"
+  >
+    Sprawdź silną spójność
+  </Button>
+</div>
+`;
+
+exports[`ConnectivityButtonChecker should render fail message 1`] = `
+<div>
+  <Alert
+    className="alert-danger"
+    closeAriaLabel="Close"
+    color="success"
+    isOpen={true}
+    tag="div"
+    transition={
+      Object {
+        "appear": true,
+        "baseClass": "fade",
+        "baseClassActive": "show",
+        "enter": true,
+        "exit": true,
+        "in": true,
+        "mountOnEnter": false,
+        "onEnter": [Function],
+        "onEntered": [Function],
+        "onEntering": [Function],
+        "onExit": [Function],
+        "onExited": [Function],
+        "onExiting": [Function],
+        "tag": "div",
+        "timeout": 150,
+        "unmountOnExit": true,
+      }
+    }
+  >
+    <b>
+      Graf nie jest silnie spójny.
+    </b>
+  </Alert>
+  <Button
+    color="secondary"
+    onClick={[Function]}
+    size="lg"
+    style={
+      Object {
+        "backgroundColor": "#6B0F19",
+        "color": "#ffffff",
+      }
+    }
+    tag="button"
+  >
+    Sprawdź silną spójność
+  </Button>
+</div>
+`;
+
+exports[`ConnectivityButtonChecker should render success message 1`] = `
+<div>
+  <Alert
+    className="alert-success"
+    closeAriaLabel="Close"
+    color="success"
+    isOpen={true}
+    tag="div"
+    transition={
+      Object {
+        "appear": true,
+        "baseClass": "fade",
+        "baseClassActive": "show",
+        "enter": true,
+        "exit": true,
+        "in": true,
+        "mountOnEnter": false,
+        "onEnter": [Function],
+        "onEntered": [Function],
+        "onEntering": [Function],
+        "onExit": [Function],
+        "onExited": [Function],
+        "onExiting": [Function],
+        "tag": "div",
+        "timeout": 150,
+        "unmountOnExit": true,
+      }
+    }
+  >
+    <b>
+      Graf jest silnie spójny!
+    </b>
+  </Alert>
+  <Button
+    color="secondary"
+    onClick={[Function]}
+    size="lg"
+    style={
+      Object {
+        "backgroundColor": "#6B0F19",
+        "color": "#ffffff",
+      }
+    }
+    tag="button"
+  >
+    Sprawdź silną spójność
+  </Button>
+</div>
+`;

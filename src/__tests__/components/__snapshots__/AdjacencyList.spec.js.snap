@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`ListySasiedztwa should render 1`] = `
+exports[`AdjacencyList should render 1`] = `
 <div
   className="macierzSasiedztwa"
 >

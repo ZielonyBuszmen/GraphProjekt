@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import MacierzSasiedztwa from './MacierzSasiedztwa';
-import ListySasiedztwa from './ListySasiedztwa';
+import ListySasiedztwa from './AdjacencyList';
 import { Row, Col } from 'reactstrap';
 import ConnectivityButtonChecker from './ConnectivityButtonChecker';
 import '../css/style.css';

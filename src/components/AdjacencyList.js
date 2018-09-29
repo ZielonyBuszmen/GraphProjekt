@@ -4,7 +4,7 @@ import { listySasiedztwaChanged } from '../actions/actionCreators';
 import { connect } from 'react-redux';
 import { matrixToList } from '../helpers';
 
-export class ListySasiedztwa extends React.Component {
+export class AdjacencyList extends React.Component {
 
   /**
    * Renderuje całą listę sąsiedztwa, wraz z inputami i wartościami
@@ -73,4 +73,4 @@ export const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(ListySasiedztwa);
+)(AdjacencyList);

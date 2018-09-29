@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home should render 1`] = `
+<div>
+  <Navbar
+    expand="md"
+    light={true}
+    style={
+      Object {
+        "backgroundColor": "#290004",
+      }
+    }
+    tag="nav"
+  >
+    <Container
+      tag="div"
+    >
+      <NavbarBrand
+        href="/"
+        style={
+          Object {
+            "color": "#efe7e7",
+          }
+        }
+        tag="a"
+      >
+        <b>
+          Silna spójność grafów
+        </b>
+      </NavbarBrand>
+      <NavbarToggler
+        tag="button"
+        type="button"
+      />
+    </Container>
+  </Navbar>
+</div>
+`;

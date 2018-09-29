@@ -3,7 +3,7 @@ import { Col, Button, FormGroup, Label, Input, InputGroup, InputGroupAddon } fro
 import { graphSizeChanged } from '../actions/actionCreators';
 import { connect } from 'react-redux';
 
-class VertexQuantityInput extends React.Component {
+export class VertexQuantityInput extends React.Component {
 
   constructor(props) {
     super(props);
@@ -31,7 +31,7 @@ class VertexQuantityInput extends React.Component {
             <Label for="exampleEmail">Ilość wierzchołków: <i>(maksymalnie 20)</i></Label>
             <div className="col-3">
             <InputGroup>
-              <Input type="text" name="qty" id="qty" size={2} value={this.state.qty} onChange={this.changeQty}/>
+                <Input type="text" name="qty" id="qty" size="2" value={this.state.qty} onChange={this.changeQty}/>
               <InputGroupAddon addonType="append">
                 <Button style={{'color': '#ffffff','backgroundColor': '#6B0F19'}} onClick={this.handleSubmit}>OK</Button>
               </InputGroupAddon>
@@ -45,13 +45,13 @@ class VertexQuantityInput extends React.Component {
 }
 
 
-const mapStateToProps = (state) => {
+export const mapStateToProps = (state) => {
   return {
     graphSize: state.graphSize,
   };
 };
 
-const mapDispatchToProps = (dispatch) => {
+export const mapDispatchToProps = (dispatch) => {
   return {
     graphSizeChanged: (newSize) => dispatch(graphSizeChanged(newSize)),
   }

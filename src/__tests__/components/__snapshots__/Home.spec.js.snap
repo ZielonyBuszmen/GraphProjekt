@@ -73,7 +73,7 @@ exports[`Home should render 1`] = `
           <b>
             Macierz sąsiedztwa:
           </b>
-          <Connect(MacierzSasiedztwa)
+          <Connect(AdjacencyMatrix)
             size={2}
           />
           <hr />

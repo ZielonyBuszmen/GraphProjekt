@@ -1,10 +1,10 @@
 import React from 'react';
 import toJson from 'enzyme-to-json';
 import { shallow } from 'enzyme';
-import { MacierzSasiedztwa, mapDispatchToProps, mapStateToProps } from '../../components/MacierzSasiedztwa';
+import { AdjacencyMatrix, mapDispatchToProps, mapStateToProps } from '../../components/AdjacencyMatrix';
 import { createEmptyMatrix, macierzSasiedztwaChanged, MacierzSasiedztwaChanged } from '../../actions/actionCreators';
 
-describe('MacierzSasiedztwa', () => {
+describe('AdjacencyMatrix', () => {
   it('should render', () => {
     const props = {
       createEmptyMatrix: jest.fn(),
@@ -12,7 +12,7 @@ describe('MacierzSasiedztwa', () => {
       matrix: [[1, 2], [3, 4]],
       size: 2,
     };
-    const component = shallow(<MacierzSasiedztwa {...props} />);
+    const component = shallow(<AdjacencyMatrix {...props} />);
     expect(toJson(component)).toMatchSnapshot();
   });
 
@@ -23,7 +23,7 @@ describe('MacierzSasiedztwa', () => {
       matrix: [[1, 2], [3, 4]],
       size: 2,
     };
-    const component = shallow(<MacierzSasiedztwa {...props} />);
+    const component = shallow(<AdjacencyMatrix {...props} />);
     expect(component.find('Input')).toHaveLength(4);
     expect(component.find('td')).toHaveLength(9);
   });
@@ -35,7 +35,7 @@ describe('MacierzSasiedztwa', () => {
       matrix: [],
       size: 0,
     };
-    const component = shallow(<MacierzSasiedztwa {...props} />);
+    const component = shallow(<AdjacencyMatrix {...props} />);
     expect(component.find('Input')).toHaveLength(0);
     expect(component.find('td')).toHaveLength(1);
   });
@@ -47,7 +47,7 @@ describe('MacierzSasiedztwa', () => {
       matrix: [[1, 2], [3, 4]],
       size: 2,
     };
-    const component = shallow(<MacierzSasiedztwa {...props} />);
+    const component = shallow(<AdjacencyMatrix {...props} />);
     const inputs = component.find('Input');
     inputs.at(1).simulate('change', {target: {value: 10}});
     expect(props.macierzSasiedztwaChanged).toBeCalledWith(0, 1, 10);

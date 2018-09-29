@@ -30,3 +30,4 @@ yarn deploy
 
 #### Słowniczek
  - Adjacency list - Lista sąsiedztw
+ - Adjacency matrix - Macierz sąsiedztwa

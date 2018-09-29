@@ -1,4 +1,6 @@
 # GraphProjekt
+[![Coverage Status](https://coveralls.io/repos/github/ZielonyBuszmen/GraphProjekt/badge.svg?branch=master)](https://coveralls.io/github/ZielonyBuszmen/GraphProjekt?branch=master)
+
 
 ![first photo of project](graphProjekt_1.png)
 

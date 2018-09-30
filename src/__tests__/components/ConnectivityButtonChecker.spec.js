@@ -93,6 +93,6 @@ describe('mapDispatchToProps', () => {
       .toEqual(checkGraphConnectivity(['matrix']));
 
     expect(result.blockGraphInputs())
-      .toEqual(blockGraphInputs(true));
+      .toEqual(blockGraphInputs());
   });
 });

@@ -17,6 +17,12 @@ describe('AdjacencyList', () => {
     expect(component.find('Input')).toHaveLength(4);
   });
 
+  it('should render with max length', () => {
+    const matrix = [[1, 0], [3, 4]];
+    const component = shallow(<AdjacencyList matrix={matrix}/>);
+    expect(component.find('Input')).toHaveLength(4);
+  });
+
   it('should render with 0 inputs', () => {
     const component = shallow(<AdjacencyList matrix={[]}/>);
     expect(component.find('Input')).toHaveLength(0);

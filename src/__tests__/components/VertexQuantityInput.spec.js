@@ -32,6 +32,32 @@ describe('VertexQuantityInput', () => {
     expect(graphSizeChanged).toBeCalledWith(3)
   });
 
+  it('should handleSubmit on form submit when qty is not int', () => {
+    const graphSizeChanged = jest.fn();
+    const props = {
+      graphSize: 2,
+      graphSizeChanged
+    };
+    const component = shallow(<VertexQuantityInput {...props} />);
+    const input = component.find('#qty');
+    input.simulate('change', {target: {value: 'test'}});
+    component.find('form').simulate('submit', { preventDefault: () => {} });
+    expect(graphSizeChanged).toBeCalledWith(0)
+  });
+
+  it('should handleSubmit on form submit when qty is under 20', () => {
+    const graphSizeChanged = jest.fn();
+    const props = {
+      graphSize: 2,
+      graphSizeChanged
+    };
+    const component = shallow(<VertexQuantityInput {...props} />);
+    const input = component.find('#qty');
+    input.simulate('change', {target: {value: 25}});
+    component.find('form').simulate('submit', { preventDefault: () => {} });
+    expect(graphSizeChanged).toBeCalledWith(0)
+  });
+
   it('should change qty', () => {
     const graphSizeChanged = jest.fn();
     const props = {

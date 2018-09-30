@@ -40,23 +40,23 @@ yarn deploy
 -------------------------------|----------|----------|----------|----------|-------------------|
 File                           |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
 -------------------------------|----------|----------|----------|----------|-------------------|
-All files                      |    84.77 |    69.12 |     97.5 |    89.08 |                   |
- src                           |       55 |    40.91 |    90.48 |    62.69 |                   |
-  helpers.js                   |      100 |       90 |      100 |      100 |                81 |
+All files                      |    85.19 |    82.35 |     97.5 |    89.08 |                   |
+ src                           |       55 |    45.45 |    90.48 |    62.69 |                   |
+  helpers.js                   |      100 |      100 |      100 |      100 |                   |
   index.js                     |        0 |        0 |        0 |        0 |... ,4,5,6,8,11,13 |
   setupTests.js                |      100 |      100 |      100 |      100 |                   |
   store.js                     |        0 |        0 |        0 |        0 |... 28,29,33,38,41 |
- src/actions                   |      100 |        0 |      100 |      100 |                   |
-  actionCreators.js            |      100 |        0 |      100 |      100 |                57 |
- src/components                |    99.06 |    70.83 |      100 |      100 |                   |
-  AdjacencyList.js             |      100 |       50 |      100 |      100 |             32,36 |
-  AdjacencyMatrix.js           |    96.67 |       50 |      100 |      100 |          42,43,54 |
+ src/actions                   |      100 |      100 |      100 |      100 |                   |
+  actionCreators.js            |      100 |      100 |      100 |      100 |                   |
+ src/components                |      100 |      100 |      100 |      100 |                   |
+  AdjacencyList.js             |      100 |      100 |      100 |      100 |                   |
+  AdjacencyMatrix.js           |      100 |      100 |      100 |      100 |                   |
   App.js                       |      100 |      100 |      100 |      100 |                   |
   BlockMask.js                 |      100 |      100 |      100 |      100 |                   |
   ConnectivityButtonChecker.js |      100 |      100 |      100 |      100 |                   |
   Header.js                    |      100 |      100 |      100 |      100 |                   |
   Home.js                      |      100 |      100 |      100 |      100 |                   |
-  VertexQuantityInput.js       |      100 |    66.67 |      100 |      100 |             17,18 |
+  VertexQuantityInput.js       |      100 |      100 |      100 |      100 |                   |
  src/reducers                  |      100 |      100 |      100 |      100 |                   |
   connectivityReducer.js       |      100 |      100 |      100 |      100 |                   |
   graphSizeReducer.js          |      100 |      100 |      100 |      100 |                   |

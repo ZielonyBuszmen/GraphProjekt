@@ -47,7 +47,7 @@ describe('copyMatrix', () => {
 });
 
 describe('immutablePush', () => {
-  it('should do immutable push', function () {
+  it('should do immutable push', () => {
     const arr = [1, 2];
     const result = immutablePush(arr, 3);
     expect(result).toEqual([1, 2, 3]);
@@ -56,19 +56,19 @@ describe('immutablePush', () => {
 });
 
 describe('createEmptyArray', () => {
-  it('should create empty array', function () {
+  it('should create empty array', () => {
     const result = createEmptyArray(2);
     expect(result).toEqual([null, null]);
   });
 
-  it('should create empty array without any value', function () {
+  it('should create empty array without any value', () => {
     const result = createEmptyArray(0);
     expect(result).toEqual([]);
   });
 });
 
 describe('matrixToList', () => {
-  it('should change matrix to list', function () {
+  it('should change matrix to list', () => {
     const matrix = [
       [1, 2, 3],
       [0, 2, 3],
@@ -85,7 +85,7 @@ describe('matrixToList', () => {
 });
 
 describe('listToMatrix', () => {
-  it('should change list to matrix', function () {
+  it('should change list to matrix', () => {
     const list = [
       [2, 1, 0],
       [0, 1],
@@ -94,6 +94,21 @@ describe('listToMatrix', () => {
     const expected = [
       [1, 1, 1],
       [1, 1, 0],
+      [0, 0, 0],
+    ];
+    const result = listToMatrix(list);
+    expect(result).toEqual(expected);
+  });
+
+  it('should change list to matrix when number is not inteeger', () => {
+    const list = [
+      [2, 1, 0],
+      [0, "a"],
+      [],
+    ];
+    const expected = [
+      [1, 1, 1],
+      [1, 0, 0],
       [0, 0, 0],
     ];
     const result = listToMatrix(list);
@@ -157,7 +172,7 @@ describe('Stack', () => {
 });
 
 describe('changeGraphSize', () => {
-  it('should change graph size from 4 to 2', function () {
+  it('should change graph size from 4 to 2', () => {
     const matrix = [
       [1, 2, 3, 4],
       [5, 6, 7, 8],
@@ -168,7 +183,7 @@ describe('changeGraphSize', () => {
     expect(result).toEqual([[1, 2], [5, 6]])
   });
 
-  it('should change graph size from 2 to 3', function () {
+  it('should change graph size from 2 to 3', () => {
     const matrix = [
       [1, 2],
       [5, 6],
@@ -182,7 +197,7 @@ describe('changeGraphSize', () => {
     expect(result).toEqual(expected)
   });
 
-  it('should change graph size from 1 to 0', function () {
+  it('should change graph size from 1 to 0', () => {
     const matrix = [
       [1]
     ];

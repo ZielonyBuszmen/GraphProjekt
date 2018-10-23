@@ -5,6 +5,8 @@
 
 ![first photo of project](graphProjekt_1.png)
 
+Kolory, teksty i layout zostały poczynione przez Patrycję. ([Patrycja20](https://github.com/Patrycja20))
+
 ## Instlacja i uruchomienie
 Do instalacji zależności i uruchomienia programu potrzebny jest Node.js (wraz z npm) oraz yarn.
 

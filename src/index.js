@@ -7,14 +7,16 @@ import App from './components/App'
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+export const target = document.querySelector('#root');
 
-const target = document.querySelector('#root');
-
-render(
+export const AppWithProvider = (store, history) =>
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <App/>
     </ConnectedRouter>
-  </Provider>,
+  </Provider>;
+
+render(
+  AppWithProvider(store, history),
   target
 );
